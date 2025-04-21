@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LoRaWAN">
+    <title>LoRaWAN - Projet 7</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #33ff33;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .playstore-style {
+            background: #222;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: inset 0 0 10px #0f0;
+        }
+
+        .playstore-style h2 {
+            font-size: 2em;
+            border-bottom: 1px solid #33ff33;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        .playstore-style h3 {
+            color: #ff0;
+        }
+
+        .playstore-style ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .playstore-style ul li::before {
+            content: "▣ ";
+            color: #FF00FF;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .screenshots img {
+            border: 2px solid #555;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #0f0;
+            width: 220px;
+            height: auto;
+        }
+
+        button {
+            background-color: #222;
+            color: #33ff33;
+            border: 2px solid #33ff33;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        header nav ul li a {
+            color: #33ff33;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Enregistreur de paramètres automate</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="b42.html">B42 ??</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="playstore-style">
+    <h2>📡 Voie de mesure reportée par LoRaWAN</h2>
+
+    <p>Un duo de cartes Arduino intelligent permettant de transmettre des informations analogiques à longue distance grâce à la technologie LoRaWAN. Ce projet vise à offrir une solution de mesure à distance sans nécessiter une infrastructure coûteuse, idéale pour des applications industrielles et environnementales.</p>
+
+    <h3>Fonctionnalités :</h3>
+    <ul>
+        <li>Transmission de données analogiques via LoRaWAN sur de longues distances</li>
+        <li>Compatible avec des cartes Arduino standards pour un déploiement rapide</li>
+        <li>Idéal pour des applications IoT industrielles et environnementales</li>
+        <li>Installation et configuration simplifiées</li>
+        <li>Consommation énergétique optimisée pour des déploiements à long terme</li>
+    </ul>
+
+        <h3>Captures d’écran :</h3>
+        <div class="screenshots">
+            <img src="images/enregistreur_parametres.jpg" alt="Boîtier du projet">
+            <img src="images/ecran_lcd_affichage.jpg" alt="Écran LCD avec les données">
+            <img src="images/liaison_serie.jpg" alt="Câblage Arduino automate">
+            <img src="images/carte_sd.jpg" alt="Carte SD insérée dans le module">
+        </div>
+
+        <h3>Pourquoi ce projet ?</h3>
+    <p>Ce système permet d'étendre les capacités de mesure et de surveillance sur de grandes distances tout en réduisant les coûts liés aux infrastructures filaires. Parfait pour les projets IoT dans des zones reculées ou difficiles d'accès, il transforme les cartes Arduino en instruments de mesure à distance ultra-fiables, offrant une solution performante et économique.</p>
+
+    <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

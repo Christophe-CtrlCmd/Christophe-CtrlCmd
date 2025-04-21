@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ENIGMA">
+    <title>ENIGMA - Projet 6</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #33ff33;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .playstore-style {
+            background: #222;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: inset 0 0 10px #0f0;
+        }
+
+        .playstore-style h2 {
+            font-size: 2em;
+            border-bottom: 1px solid #33ff33;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        .playstore-style h3 {
+            color: #ff0;
+        }
+
+        .playstore-style ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .playstore-style ul li::before {
+            content: "▣ ";
+            color: #FF00FF;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .screenshots img {
+            border: 2px solid #555;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #0f0;
+            width: 220px;
+            height: auto;
+        }
+
+        button {
+            background-color: #222;
+            color: #33ff33;
+            border: 2px solid #33ff33;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        header nav ul li a {
+            color: #33ff33;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Application Android de codage "ENIGMA"</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="b42.html">B42 ??</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section class="playstore-style">
+    <h2>📲 Application Android de codage "ENIGMA"</h2>
+
+    <p>Plonge dans l’univers fascinant du chiffrement historique avec cette application inspirée de la légendaire machine ENIGMA. Que tu sois passionné de cryptographie ou amateur d’histoire, cette appli te permet de coder et décoder des messages comme à l’époque… mais dans ta poche.</p>
+
+    <h3>Fonctionnalités :</h3>
+    <ul>
+        <li>Simulation fidèle de la machine ENIGMA (3 rotors)</li>
+        <li>Réflecteur fixe</li>
+        <li>Prise en charge des espaces, chiffres et certains caractères spéciaux</li>
+        <li>Idéale pour les messages longs</li>
+
+    </ul>
+
+    <h3>Captures d’écran :</h3>
+    <div class="screenshots">
+        <img src="images/ENI1.jpg" alt="Configuration ENIGMA">
+        <img src="images/ENI2.jpg" alt="Message codé en sortie">
+        <img src="images/ENI3.jpg" alt="Message codé en sortie">
+    </div>
+
+    <h3>Pourquoi ce projet ?</h3>
+    <p>Ce projet est né d’une fascination pour l’histoire du chiffrement et le génie mécanique de la machine ENIGMA. 
+	L’objectif : proposer une version numérique accessible à tous, tout en respectant fidèlement les principes de codage d’origine. 
+	Que ce soit pour l’apprentissage, le jeu ou la passion de la cryptographie, cette application permet de plonger dans le monde du codage secret avec une interface simple et efficace. 
+	C’est aussi un clin d’œil aux curieux, aux passionnés de Seconde Guerre mondiale et aux fans de messages codés.</p>
+
+    <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
+</section>
+
+
+
+
+    <footer>
+        <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

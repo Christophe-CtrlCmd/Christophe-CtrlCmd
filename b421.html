@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Interface Industrielle Retro</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000040;
+      font-family: monospace;
+      color: black;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 20px;
+    }
+    .window {
+      background-color: #00FFFF;
+      border: 5px double #0088FF;
+      padding: 10px;
+      box-shadow: inset -2px -2px 0px #0077CC;
+      height: 400px;
+    }
+    .title-bar {
+      background-color: #004080;
+      color: white;
+      padding: 3px 6px;
+      font-weight: bold;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    .sub-window {
+      background-color: #00AA00;
+      border: 3px solid #004080;
+      padding: 5px;
+      color: yellow;
+    }
+    .label-box {
+      background-color: #00FFFF;
+      border: 5px double #0088FF;
+      padding: 5px;
+      margin-top: 10px;
+      height: 280px;
+    }
+    .small-box {
+      border: 3px solid yellow;
+      background-color: #0040FF;
+      color: yellow;
+      padding: 2px 4px;
+      display: inline-block;
+      margin: 5px 0;
+      font-size: 0.8em;
+    }
+    #bravoMessage {
+      display: none;
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: yellow;
+      color: black;
+      font-size: 2em;
+      padding: 20px;
+      border: 3px solid black;
+      z-index: 1000;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    function passe() {
+      var motdepasse = document.getElementById("name").value;
+	  var motdepasse1 = document.getElementById("name1").value;
+      var motdepasse2 = document.getElementById("name2").value;
+      var motdepasse3 = document.getElementById("name3").value;
+      var motdepasse4 = document.getElementById("name4").value;
+	  var motdepasse5 = document.getElementById("name5").value;
+	  var motdepasse6 = document.getElementById("name6").value;
+
+      if (motdepasse == "65" && motdepasse1 == "85" && motdepasse2 == "84" && motdepasse3 == "77" && motdepasse4 == "65" && motdepasse5 == "84" && motdepasse6 == "69") { // <-- Pour les tricheurs la reponse est ici
+        document.getElementById("bravoMessage").style.display = "block";
+        setTimeout(function () {
+          window.location = "b422.html";
+        }, 5000);
+      } else if (motdepasse == "0" && motdepasse1 == "0" && motdepasse2 == "0" && motdepasse3 == "0" && motdepasse4 == "0" && motdepasse5 == "0" && motdepasse6 == "0") {
+        window.location = "https://www.google.fr/search?q=ASCII";
+      } else {
+        alert("Mauvais mot de passe");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="title-bar">SADAPIVISU - AFFICHAGE PROGRAMMES</div>
+  <div class="container">
+    <div class="window">
+      <table>
+        <tr><th>S15</th><th>B33</th><th>B37</th><th>B38</th><th>B39</th><th>B41</th><th>R468</th><th></th><th>B42</th></tr>
+        <tr><th>|---</th><th>-<mark>-||-</mark>-</th><th>---<mark>-||-</mark>---</th><th>---<mark>-||-</mark>---</th><th>---<mark>-||-</mark>---</th><th>---<mark>-||-</mark>---</th><th>---<mark>-||-</mark>---</th><th>------</th><th>----<mark>-()-</mark>---|</th></tr>         
+        <tr><th>.</th></tr>
+		<tr><th>L292</th><th></th><th>M983<-0.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+        <tr><th>L293</th><th></th><th>M1242,M983</th><th><-</th><th>M1000,M983.</th><th></th><th></th><th></th><th></th></tr>
+        <tr><th>L294</th><th></th><th>[293,0]+M983</th><th>>7.</th><th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>.</th></tr>
+        <tr><th></th><th>M1242</th><th>M1243</th><th>M1244</th><th>M1245</th><th>M1246</th><th>M1247</th><th>M1248</th><th>M1249</th></tr>
+        <tr>
+          <th></th>
+		  <th><input type="text" id="name" size="1" /></th>
+          <th><input type="text" id="name1" size="1" /></th>
+          <th><input type="text" id="name2" size="1" /></th>
+          <th>79</th>
+          <th><input type="text" id="name3" size="1" /></th>
+          <th><input type="text" id="name4" size="1" /></th>
+          <th><input type="text" id="name5" size="1" /></th>
+		  <th><input type="text" id="name6" size="1" /></th>
+        </tr>
+        <tr>
+          <th></th><th></th><th></th><th></th>
+          <th><input type="button" value="VALIDER" onClick="passe()"></th>
+          <th></th><th></th><th></th><th></th>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <div class="small-box">AUTOMATE<br>CCLERMONT</div>
+      <div class="sub-window">
+        <strong>Commande :</strong> <span style="background: yellow; color: black">S15</span><br>
+        <strong>Mode :</strong> <span style="color: white"><mark>CALCUL</mark></span><br>
+        <strong>Message :</strong> Non commentée<br>
+        <strong>Erreur :</strong> 
+      </div>
+      <div class="label-box">
+        <table>
+          <tr><th>TYPE</th><th>MNEMO</th><th>VALEUR</th><th>LIBELLE</th></tr>
+          <tr><td>B42</td><td>STANDART</td><td></td><td>STANDARD DEFAUTS AUTOMATE</td></tr>
+          <tr><td>M1242</td><td>AUTOMATE</td><td>65</td><td>1er LETTRE MOT DE PASSE</td></tr>
+          <tr><td>M983</td><td>INDEX</td><td>0</td><td>INDEX LETTRE MOT DE PASSE</td></tr>
+          <tr><td>M1244</td><td>AUTOMATE</td><td>84</td><td>3EME LETTRE MOT DE PASSE</td></tr>
+          <tr><td>M1234</td><td>AIDE</td><td>0000000</td><td>AIDE MOT DE PASSE</td></tr>
+          <tr><td></td><td></td><td></td><td>METTRE LES VALEURS ET APPUYER SUR VALIDER</td></tr>
+          <tr><td></td><td></td><td></td><td>VALEURS COMPRIS ENTRE 0 ET 255</td></tr>
+		  <tr><td></td><td></td><td></td><td>Indice : Je suis le cerveau sans visage qui contrôle les machines, inlassablement, au cœur de l'industrie.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="bravoMessage">
+    🎉 Bravo ! Accès autorisé 🎉
+  </div>
+</body>
+</html>

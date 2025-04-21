@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="APPLICATION CtrlCmd">
+    <title>APPLICATION CtrlCmd - Projet 3</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #33ff33;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .playstore-style {
+            background: #222;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: inset 0 0 10px #0f0;
+        }
+
+        .playstore-style h2 {
+            font-size: 2em;
+            border-bottom: 1px solid #33ff33;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        .playstore-style h3 {
+            color: #ff0;
+        }
+
+        .playstore-style ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .playstore-style ul li::before {
+            content: "▣ ";
+            color: #FF00FF;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .screenshots img {
+            border: 2px solid #555;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #0f0;
+            width: 220px;
+            height: auto;
+        }
+
+        button {
+            background-color: #222;
+            color: #33ff33;
+            border: 2px solid #33ff33;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        header nav ul li a {
+            color: #33ff33;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Application Android - Aide terrain</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="b42.html">B42 ??</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <section class="playstore-style">
+    <h2>📱 Application Android - Aide terrain</h2>
+
+    <p>Une appli Android légère mais musclée pour les techniciens terrain. Elle regroupe fiches, calculateurs, rappels JBus et bien plus encore. Disponible en APK brut (pas Play Store).</p>
+
+    <h3>Fonctionnalités :</h3>
+    <ul>
+		<li>Outils de conversion dédiés à l’automatisme</li>
+		<li>Modules de calcul adaptés aux mesures industrielles</li>
+		<li>Base documentaire embarquée, accessible hors connexion</li>
+		<li>Fonctionne sur tous les appareils Android 7.0 et supérieurs</li>
+    </ul>
+
+    <h3>Captures d’écran :</h3>
+    <div class="screenshots">
+        <img src="images/DM1.jpg" alt="Menu">
+        <img src="images/DM2.jpg" alt="Convertisseur ASCII/Binaire/Hexa/Gray/Decimale">
+        <img src="images/DM3.jpg" alt="Calculatrice instrumentation">
+    </div>
+
+    <h3>Pourquoi ce projet ?</h3>
+    <p>Entre deux interventions, pas de temps pour chercher sur Google. Cette app est un couteau suisse numérique toujours prêt, même sans réseau. Old school dans l’âme, Android dans la poche.</p>
+
+    <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
+</section>
+
+
+    <footer>
+        <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

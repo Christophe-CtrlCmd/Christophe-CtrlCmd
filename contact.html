@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Christophe-CtrlCmd pour toute demande professionnelle ou pour discuter de projets d'automatisation.">
+    <title>Contact - Christophe-CtrlCmd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Script EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("Owi5m0WB-g_JghchS"); // Remplace par ton vrai public key
+  })();
+
+  // Écouteur d'événement pour l'envoi du formulaire
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche le rechargement de la page à la soumission du formulaire
+
+    // Envoi du formulaire via EmailJS
+    emailjs.sendForm('service_l3494c7', 'template_ly8ixrp', this)  // Remplace avec ton Service ID et Template ID
+      .then(function() {
+        document.getElementById('resultat').textContent = "Message envoyé avec succès !";
+      }, function(error) {
+        document.getElementById('resultat').textContent = "Erreur lors de l'envoi. Réessayez plus tard.";
+        console.error('FAILED...', error);
+      });
+
+    this.reset(); // Réinitialise le formulaire après envoi
+  });
+</script>
+
+<!-- Header du site -->
+<header>
+    <h1>Christophe-CtrlCmd</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="projects.html">Projets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="b42.html">B42 ??</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Section Contact -->
+<section>
+    <h2>Contactez-moi</h2>
+    <p>Vous avez un projet ou une question ? N'hésitez pas à me contacter pour en discuter !</p>
+
+    <!-- Formulaire de contact -->
+    <form id="contact-form">
+        <label for="name">Votre nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Votre email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Votre message :</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Envoyer</button>
+        <p id="resultat" style="margin-top:10px; color:lime;"></p> <!-- Affichage du statut -->
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

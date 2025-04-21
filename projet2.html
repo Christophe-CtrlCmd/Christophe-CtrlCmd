@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pocket SMC600">
+    <title>Pocket SMC600 - Projet 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #33ff33;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .playstore-style {
+            background: #222;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: inset 0 0 10px #0f0;
+        }
+
+        .playstore-style h2 {
+            font-size: 2em;
+            border-bottom: 1px solid #33ff33;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        .playstore-style h3 {
+            color: #ff0;
+        }
+
+        .playstore-style ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .playstore-style ul li::before {
+            content: "▣ ";
+            color: #FF00FF;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .screenshots img {
+            border: 2px solid #555;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #0f0;
+            width: 220px;
+            height: auto;
+        }
+
+        button {
+            background-color: #222;
+            color: #33ff33;
+            border: 2px solid #33ff33;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        header nav ul li a {
+            color: #33ff33;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pocket diagnostic automate</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="b42.html">B42 ??</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="playstore-style">
+    <h2>🧰 Pocket diagnostic automate</h2>
+
+    <p>Un outil de poche, discret mais redoutablement efficace. Cette pocket convertit un Arduino Every et un écran LCD en une véritable station de diagnostic portable pour automates SMC600. 
+	Alimentée directement par l’unité centrale, elle utilise une communication en boucle de courant à 19200 bauds. Elle intègre 13 fonctions dédiées principalement au diagnostic et à l’analyse terrain.</p>
+
+    <h3>Fonctionnalités :</h3>
+    <ul>
+		<li>Autodiagnostic des bits de défauts automate</li>
+		<li>Teste automatiquement la liaison à l'initialisation</li>
+		<li>Peut enregistrer et écrire les mots de données</li>
+		<li>Diagnostique les cartes 5CLI2</li>
+		<li>Alimentée par l'unité centrale</li>
+    </ul>
+
+    <h3>Captures d’écran :</h3>
+    <div class="screenshots">
+        <img src="images/pocket_diagnostic.jpg" alt="Pocket dans la main">
+        <img src="images/ecran_pocket.jpg" alt="Affichage diagnostic binaire">
+        <img src="images/P600.jpg" alt="Câblage interne pocket">
+    </div>
+
+    <h3>Pourquoi ce projet ?</h3>
+    <p>Conçu pour pallier l'absence d'outils modernes sur des systèmes anciens, ce projet répond à un vrai besoin terrain. 
+Les automates SMC600 sont encore présents dans de nombreuses installations industrielles, mais souvent sans moyen de diagnostic pratique ou portable. 
+Cette pocket permet de réintroduire un contrôle rapide et autonome, le tout dans un format compact et robuste. 
+Pensée pour les techniciens, par un technicien, elle redonne de la visibilité à ces automates oubliés.</p>
+
+    <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

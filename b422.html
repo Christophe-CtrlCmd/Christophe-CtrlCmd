@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Christophe CtrlCmd - Jeu Robot Rétro</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0d0d0d;
+      color: #33ff33;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 20px;
+      text-shadow: 0 0 5px #33ff33;
+    }
+    .game-area {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+    }
+    .game-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 10px;
+    }
+    .wall {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background-color: #1a1a1a;
+      padding: 5px;
+      border: 2px dashed #33ff33;
+      box-shadow: 0 0 10px #33ff33;
+    }
+    .block {
+      width: 30px;
+      height: 30px;
+      background-color: #222;
+      border: 1px solid #0f0;
+      box-sizing: border-box;
+    }
+    .block.open {
+      background-color: #33ff33;
+      box-shadow: inset 0 0 5px #66ff66;
+    }
+    .block.path {
+      background-color: #ffff00;
+      box-shadow: 0 0 5px #ffff66;
+    }
+    #robot {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      position: absolute;
+      transition: all 0.5s linear;
+      z-index: 10;
+      box-shadow: 0 0 10px red;
+    }
+    .controls {
+      margin-top: 30px;
+    }
+    .controls p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    #inputs input {
+      width: 80px;
+      margin: 5px;
+      background-color: #000;
+      border: 1px solid #33ff33;
+      color: #33ff33;
+      text-align: center;
+      font-family: monospace;
+    }
+    button {
+      background-color: #000;
+      color: #33ff33;
+      border: 2px solid #33ff33;
+      padding: 10px 20px;
+      font-family: monospace;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #003300;
+    }
+    #bravoMessage {
+      display: none;
+      font-size: 3em;
+      color: cyan;
+      margin-top: 40px;
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+      animation: flash 1s infinite;
+    }
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Parcour Robot Rétro</h1>
+  <div id="bravoMessage">🎉 BRAVO ! Redirection en cours...</div>
+  <div class="game-area">
+    <div id="robot"></div>
+    <div class="game-container" id="walls"></div>
+  </div>
+  <div class="controls">
+    <p>Entrer une valeur décimale pour chaque mur (le binaire est la clef) :</p>
+    <div id="inputs"></div>
+    <button onclick="moveRobot()">Lancer le robot</button>
+  </div>
+  <script>
+    const wallsContainer = document.getElementById("walls");
+    const inputsContainer = document.getElementById("inputs");
+    const robot = document.getElementById("robot");
+    const bravoMessage = document.getElementById("bravoMessage");
+    const wallCount = 5;
+    const blockCount = 16;
+    const openings = [];
+    const correctPath = [];
+    const gameArea = document.querySelector(".game-area");
+
+    function generateRandomPath() {
+      for (let i = 0; i < wallCount; i++) {
+        const position = Math.floor(Math.random() * blockCount);
+        correctPath.push(position);
+        openings.push(0);
+      }
+    }
+
+    function initGame() {
+      generateRandomPath();
+
+      for (let i = 0; i < wallCount; i++) {
+        const wall = document.createElement("div");
+        wall.classList.add("wall");
+        wall.dataset.index = i;
+
+        for (let j = 0; j < blockCount; j++) {
+          const block = document.createElement("div");
+          block.classList.add("block");
+          block.dataset.row = j;
+          if (j === correctPath[i]) block.classList.add("path");
+          wall.appendChild(block);
+        }
+        wallsContainer.appendChild(wall);
+
+        const input = document.createElement("input");
+        input.type = "number";
+        input.min = 0;
+        input.max = 65535;
+        input.value = 0;
+        input.dataset.wall = i;
+        input.oninput = () => updateWallOpening(i, parseInt(input.value));
+        inputsContainer.appendChild(input);
+      }
+    }
+
+    function updateWallOpening(wallIndex, decimal) {
+      openings[wallIndex] = decimal;
+      const wall = wallsContainer.children[wallIndex];
+      const binary = decimal.toString(2).padStart(blockCount, '0');
+      Array.from(wall.children).forEach((block, index) => {
+        if (!block.classList.contains("path")) {
+          block.classList.toggle("open", binary[index] === '1');
+        }
+      });
+    }
+
+    function moveRobot() {
+      let currentWall = 0;
+      function step() {
+        if (currentWall >= wallCount) {
+          bravoMessage.style.display = "block";
+          if ("vibrate" in navigator) navigator.vibrate([100, 50, 100]);
+          setTimeout(() => {
+            window.location.href = "easteregg.html";
+          }, 5000);
+          return;
+        }
+        const decimal = openings[currentWall];
+        const binary = decimal.toString(2).padStart(blockCount, '0');
+        const openingIndex = binary.indexOf("1");
+        if (openingIndex !== correctPath[currentWall]) {
+          alert("Mauvaise ouverture au mur " + (currentWall + 1) + " !");
+          return;
+        }
+
+        const wallElement = wallsContainer.children[currentWall];
+        const blockElement = wallElement.children[openingIndex];
+        const blockRect = blockElement.getBoundingClientRect();
+        const gameRect = gameArea.getBoundingClientRect();
+
+        robot.style.left = (blockRect.left - gameRect.left) + "px";
+        robot.style.top = (blockRect.top - gameRect.top) + "px";
+
+        currentWall++;
+        setTimeout(step, 700);
+      }
+      step();
+    }
+
+    initGame();
+  </script>
+</body>
+</html>
+
