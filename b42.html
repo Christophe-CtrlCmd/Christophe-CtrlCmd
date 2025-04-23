@@ -154,108 +154,105 @@
   </div>
 
   <script>
-    // Fonction pour mélanger un tableau de manière aléatoire
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Échange des éléments
-      }
-    }
+  const ordreInitial = [
+    { label: "Memoire", img: "images/memoire.png" },
+    { label: "Unité Centrale", img: "images/UC.png" },
+    { label: "Cartes Communication", img: "images/communication.png" },
+    { label: "Cartes E/S", img: "images/ES.png" },
+    { label: "Carte Securité 5CDS ", img: "images/CDS.png" }
+  ];
 
-    const ordreInitial = [
-      { label: "Memoire", img: "images/memoire.png" },
-      { label: "Unité Centrale", img: "images/UC.png" },
-      { label: "Cartes Communication", img: "images/communication.png" },
-      { label: "Cartes E/S", img: "images/ES.png" },
-      { label: "Carte Securité 5CDS ", img: "images/CDS.png" }
-    ];
+  shuffleArray(ordreInitial); // Mélange
 
-    // Mélange aléatoire de l'ordreInitial
-    shuffleArray(ordreInitial);
+  const ordreAttendu = [
+    "Unité Centrale",
+    "Memoire",
+    "Cartes Communication",
+    "Cartes E/S",
+    "Carte Securité 5CDS "
+  ];
 
-    const ordreAttendu = [
-      "Unité Centrale",
-      "Memoire",
-      "Cartes Communication",
-      "Cartes E/S",
-      "Carte Securité 5CDS "
-    ];
+  const board = document.getElementById("board");
+  const message = document.getElementById("message");
 
-    const board = document.getElementById("board");
-    const message = document.getElementById("message");
+  let selectedCard = null;
 
-    function genererCartes() {
-      board.innerHTML = "";
-      ordreInitial.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.setAttribute("draggable", "true");
-        card.setAttribute("data-label", item.label);
-        card.innerHTML = `
-          <img src="${item.img}" alt="${item.label}">
-          <div class="label">${item.label}</div>
-        `;
-        board.appendChild(card);
-      });
-    }
-
-    genererCartes();
-
-    let dragged = null;
-
-    board.addEventListener("dragstart", (e) => {
-      if (e.target.classList.contains("card")) {
-        dragged = e.target;
-        setTimeout(() => {
-          e.target.style.display = "none";
-        }, 0);
-      }
-    });
-
-    board.addEventListener("dragend", (e) => {
-      if (dragged) {
-        dragged.style.display = "flex";
-        dragged = null;
-      }
-    });
-
-    board.addEventListener("dragover", (e) => {
-      e.preventDefault();
-      const target = e.target.closest(".card");
-      if (target && target !== dragged) {
-        const bounding = target.getBoundingClientRect();
-        const offset = bounding.y + bounding.height / 2;
-        if (e.clientY > offset) {
-          target.after(dragged);
+  function genererCartes() {
+    board.innerHTML = "";
+    ordreInitial.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.setAttribute("data-label", item.label);
+      card.innerHTML = `
+        <img src="${item.img}" alt="${item.label}">
+        <div class="label">${item.label}</div>
+      `;
+      card.addEventListener("click", () => {
+        if (!selectedCard) {
+          // Première sélection
+          selectedCard = card;
+          card.style.border = "2px solid #ff0";
+          card.style.boxShadow = "0 0 15px #ff0";
+        } else if (selectedCard === card) {
+          // Annuler la sélection si on reclique
+          selectedCard.style.border = "";
+          selectedCard.style.boxShadow = "";
+          selectedCard = null;
         } else {
-          target.before(dragged);
+          // Échanger les deux cartes
+          const tempHTML = card.innerHTML;
+          const tempLabel = card.dataset.label;
+
+          card.innerHTML = selectedCard.innerHTML;
+          card.dataset.label = selectedCard.dataset.label;
+
+          selectedCard.innerHTML = tempHTML;
+          selectedCard.dataset.label = tempLabel;
+
+          // Réinitialiser les styles
+          selectedCard.style.border = "";
+          selectedCard.style.boxShadow = "";
+          selectedCard = null;
         }
-      }
+      });
+      board.appendChild(card);
     });
+  }
 
-    function validerOrdre() {
-      const cartes = [...document.querySelectorAll(".card")];
-      const labels = cartes.map(c => c.dataset.label);
-
-      cartes.forEach(c => c.classList.remove("success", "error"));
-      message.innerText = "";
-
-      if (JSON.stringify(labels) === JSON.stringify(ordreAttendu)) {
-        cartes.forEach((c, i) => {
-          setTimeout(() => c.classList.add("success"), i * 200);
-        });
-        if ("vibrate" in navigator) navigator.vibrate([100, 50, 100]);
-
-        message.innerText = "🎉 BRAVO ! Redirection en cours...";
-
-        setTimeout(() => {
-          window.location.href="b421.html"; // <-- Page suivante
-        }, 5000); // Redirection après 5 secondes
-      } else {
-        cartes.forEach(c => c.classList.add("error"));
-        if ("vibrate" in navigator) navigator.vibrate([200, 50, 200]);
-      }
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
-  </script>
+  }
+
+  function validerOrdre() {
+    const cartes = [...document.querySelectorAll(".card")];
+    const labels = cartes.map(c => c.dataset.label);
+
+    cartes.forEach(c => c.classList.remove("success", "error"));
+    message.innerText = "";
+
+    if (JSON.stringify(labels) === JSON.stringify(ordreAttendu)) {
+      cartes.forEach((c, i) => {
+        setTimeout(() => c.classList.add("success"), i * 200);
+      });
+      if ("vibrate" in navigator) navigator.vibrate([100, 50, 100]);
+
+      message.innerText = "🎉 BRAVO ! Redirection en cours...";
+
+      setTimeout(() => {
+        window.location.href = "b421.html";
+      }, 5000);
+    } else {
+      cartes.forEach(c => c.classList.add("error"));
+      if ("vibrate" in navigator) navigator.vibrate([200, 50, 200]);
+    }
+  }
+
+  // Génère les cartes au démarrage
+  genererCartes();
+</script>
+
 </body>
 </html>
