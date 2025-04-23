@@ -86,7 +86,7 @@
 <body>
 
     <header>
-        <h1>Enregistreur de paramètres automate</h1>
+        <h1>Christophe-CtrlCmd</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -100,32 +100,34 @@
 
     <section class="playstore-style">
         <h2>📟 Enregistreur de paramètres automate</h2>
-
-        <p>Ce projet permet l'enregistrement en continu de jusqu'à 27 variables issus d’un automate SMC600 via une liaison série à 19200 bauds.
-Auto-alimenté par l’unité centrale, l’enregistreur consigne chaque variation de paramètre sur une carte microSD (jusqu’à 32 Go).
-Le tout dans une esthétique brute, old-school et résolument fonctionnelle.</p>
-
-        <h3>Fonctionnalités :</h3>
-        <ul>
-			<li>Lecture et enregistrement des variables en temps réel avec précision</li>
-			<li>Communication série à 19200 bauds pour des échanges rapides et fiables</li>
-			<li>Design optimisé pour une installation rapide et efficace</li>
-			<li>Enregistrement de listes de variables préconfigurées pour une gestion simplifiée</li>
-        </ul>
-
-        <h3>Captures d’écran :</h3>
+<br>
+        <h3>🧪 Contexte et Origine</h3>
+    <p>Face à la difficulté croissante d’utiliser des enregistreurs de données logiciels sur des systèmes d’exploitation obsolètes, et contraint de maintenir des équipements anciens, ce projet est né du besoin de disposer d’un outil indépendant, autonome et fiable. L’idée de créer un enregistreur sur microcontrôleur s’est imposée naturellement pour échapper à l’obsolescence programmée des solutions informatiques classiques.</p>
+    <p>Bien qu'une solution existait déjà, celle-ci se révélait peu flexible et limitée à un nombre réduit de variables. Mon système, plus robuste, plus simple à mettre en place, et autoalimenté par l’unité centrale, offre la possibilité d’enregistrer jusqu’à 27 variables en simultané, couvrant un éventail plus large de besoins terrain.</p>
+<br>
+        <h3>🔍 Fonctionnement et Performances</h3>
+    <p>L’enregistreur capte tous types de variables issus d’un automate SMC600 via une liaison série à 19200 bauds. L’ensemble des données est consigné sur une carte microSD jusqu’à 32 Go. Une première lecture complète des variables est effectuée au démarrage, horodatée et utilisée comme référence. Par la suite, l’appareil détecte toute variation et n’enregistre que les écarts observés, optimisant ainsi le stockage et la pertinence des logs.</p>
+    <p>Les paramètres à surveiller sont configurés directement depuis un petit clavier embarqué, et les résultats sont enregistrés dans un fichier texte lisible sous Excel, ce qui facilite l’analyse et le traitement.</p>
+<br>
+    <h3>⚙️ Matériel et Interface</h3>
+    <p>Le cœur du dispositif est un Arduino Every, hérité d’un précédent projet de diagnostic. Il est associé à un écran LCD 1602 I2C permettant de visualiser et configurer les options de démarrage. Le boîtier est de conception personnelle, imprimé en PLA pour allier robustesse et légèreté. Il a été pensé pour résister aux conditions d’un environnement industriel, sans fioritures, dans une esthétique brute et fonctionnelle.</p>
+    <p>L’alimentation est fournie directement par l’automate via son unité centrale, évitant ainsi toute source externe d’alimentation. Le câblage est simple et direct, via un bornier relié au port série de l’automate.</p>
+	<br>
+        <h3>Images :</h3>
         <div class="screenshots">
-            <img src="images/enregistreur_parametres.jpg" alt="Boîtier du projet">
+            <img src="images/BoitierSV.jpg" alt="Boîtier du projet">
             <img src="images/ecran_lcd_affichage.jpg" alt="Écran LCD avec les données">
-            <img src="images/liaison_serie.jpg" alt="Câblage Arduino automate">
+            <img src="images/SV600.jpg" alt="Câblage Arduino automate">
             <img src="images/carte_sd.jpg" alt="Carte SD insérée dans le module">
         </div>
-
-        <h3>Pourquoi ce projet ?</h3>
-        <p>Ce projet répond à un besoin croissant de solutions simples et efficaces dans l'automatisation industrielle. 
-		En transformant un Arduino en outil de diagnostic performant, il permet d'enregistrer, analyser et diagnostiquer en temps réel les paramètres d'un automate. 
-		L'objectif est d'offrir aux techniciens un outil portable et autonome, facilement déployable sur le terrain sans nécessiter de matériel complexe ou coûteux.</p>
-
+		<br>
+		<h3>🧩 Utilisation et Perspectives</h3>
+        <p>L’utilisation est pensée pour être à la portée de tous : une fois la liste des variables choisie, le système démarre automatiquement et enregistre de manière autonome. Si l’analyse des fichiers générés nécessite un minimum de compétences, la mise en œuvre de l’outil ne demande qu’une prise en main rapide. La durée d’enregistrement est pratiquement illimitée, dépendant uniquement de la capacité de la carte SD et du rythme des changements détectés.</p>
+         <p>À ce jour, le système a été spécifiquement testé et optimisé pour les automates SMC600. Toutefois, un développement similaire pourrait être envisagé pour d’autres automates comme les APRIL 1000 ou les Premium, sous réserve d’adapter le câblage et la communication.</p>
+<br>
+        <h3>💡 En résumé</h3>
+        <p>Ce projet incarne une réponse concrète à un besoin terrain : obtenir un diagnostic fiable et autonome sans dépendre de logiciels vieillissants. Avec son firmware évolutif, son fonctionnement optimisé et son approche minimaliste, cet enregistreur DIY constitue un véritable allié pour les techniciens de maintenance et les automaticiens soucieux de conserver la maîtrise de leur outil de travail.</p>
+<br>
         <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
     </section>
 
