@@ -86,7 +86,7 @@
 <body>
 
     <header>
-        <h1>Enregistreur de paramètres automate</h1>
+        <h1>Christophe-CtrlCmd</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -99,30 +99,51 @@
     </header>
 
     <section class="playstore-style">
-    <h2>📡 Voie de mesure reportée par LoRaWAN</h2>
+     <h2>📡 Voie de mesure reportée par LoRaWAN</h2>
+  <p><strong>Mesurer loin, sans fil, sans compromis.</strong></p>
+  <p>Ce projet transforme un simple duo de cartes Arduino en une solution de transmission de mesures analogiques à longue portée grâce à LoRaWAN. Il a été conçu pour les contextes où la pose de câbles est trop coûteuse ou tout simplement impossible. Facile à intégrer, économe en énergie, robuste dans la durée : un allié de choix pour vos installations IoT industrielles ou environnementales.</p>
 
-    <p>Un duo de cartes Arduino intelligent permettant de transmettre des informations analogiques à longue distance grâce à la technologie LoRaWAN. Ce projet vise à offrir une solution de mesure à distance sans nécessiter une infrastructure coûteuse, idéale pour des applications industrielles et environnementales.</p>
+  <br>
+  <h3>🌱 Genèse du projet</h3>
+  <p>Tout est parti d’un besoin concret sur le terrain : comment suivre un paramètre (En l'occurrence, un niveau) dans une zone inaccessible, éloignée ou dépourvue d’alimentation réseau ? C’est lors d’une intervention sur la mesure qu’est née l’idée : "Et si on utilisait LoRa pour ça ?". Je connaissais déjà les cartes Arduino et j’avais expérimenté quelques modules de transmission. Il ne manquait plus qu’un défi pratique pour enclencher le projet.</p>
+  <p>J’ai donc conçu ce projet pour qu’il soit adaptable, accessible, et documenté. Et surtout : pour qu’il tienne sur le terrain.</p>
 
-    <h3>Fonctionnalités :</h3>
-    <ul>
-        <li>Transmission de données analogiques via LoRaWAN sur de longues distances</li>
-        <li>Compatible avec des cartes Arduino standards pour un déploiement rapide</li>
-        <li>Idéal pour des applications IoT industrielles et environnementales</li>
-        <li>Installation et configuration simplifiées</li>
-        <li>Consommation énergétique optimisée pour des déploiements à long terme</li>
-    </ul>
+  <br>
+  <h3>⚙️ Fonctionnalités</h3>
 
-        <h3>Captures d’écran :</h3>
-        <div class="screenshots">
-            <img src="images/enregistreur_parametres.jpg" alt="Boîtier du projet">
-            <img src="images/ecran_lcd_affichage.jpg" alt="Écran LCD avec les données">
-            <img src="images/liaison_serie.jpg" alt="Câblage Arduino automate">
-            <img src="images/carte_sd.jpg" alt="Carte SD insérée dans le module">
-        </div>
+  <p><strong>📶 Transmission longue portée via LoRaWAN</strong><br>
+  Le cœur du système repose sur la communication LoRa, permettant de transmettre la mesure sur plusieurs kilomètres, même dans des environnements complexes (bois, zones industrielles, vallées…). Idéal pour surveiller des points isolés.</p>
 
-        <h3>Pourquoi ce projet ?</h3>
-    <p>Ce système permet d'étendre les capacités de mesure et de surveillance sur de grandes distances tout en réduisant les coûts liés aux infrastructures filaires. Parfait pour les projets IoT dans des zones reculées ou difficiles d'accès, il transforme les cartes Arduino en instruments de mesure à distance ultra-fiables, offrant une solution performante et économique.</p>
+  <p><strong>🔌 Compatible Arduino</strong><br>
+  Le montage repose sur des cartes Arduino standards, rendant le projet accessible à tous ceux qui ont déjà manipulé ces microcontrôleurs. Les schémas sont simples, reproductibles, évolutifs.</p>
 
+  <p><strong>🌍 Utilisation IoT industrielle et environnementale</strong><br>
+  Que ce soit pour surveiller un réservoir à distance, collecter des données climatiques dans un champ, ou étendre un réseau de capteurs dans une usine, cette solution offre une base robuste, fiable et flexible.</p>
+
+  <p><strong>🪫 Faible consommation énergétique</strong><br>
+  Pensé pour durer, le système optimise sa consommation en basculant en veille entre les cycles de mesure. Il est compatible avec les batteries rechargeables ou les petites alimentations solaires.</p>
+
+  <p><strong>🛠️ Installation et configuration simplifiées</strong><br>
+  Les modules sont préprogrammés avec une interface minimale. L’utilisateur n’a qu’à brancher les capteurs, choisir son intervalle de mesure, et c’est parti.</p>
+
+  <br>
+  <h3>📸 Captures d’écran</h3>
+  <div class="screenshots">
+    <img src="images/boitier_lora.jpg" alt="Boîtier complet avec modules Arduino">
+    <img src="images/ecran_lcd_donnees.jpg" alt="Écran LCD affichant les données en temps réel">
+    <img src="images/cablage_arduino.jpg" alt="Câblage entre carte Arduino et automate">
+    <img src="images/carte_sd_module.jpg" alt="Carte SD intégrée pour stockage local">
+  </div>
+
+  <br>
+  <h3>📦 Distribution & personnalisation</h3>
+  <p>Les fichiers sources, schémas de câblage et configurations sont disponibles sur demande. Le projet peut être adapté facilement à différents capteurs (analogiques ou numériques), et intégré à des réseaux LoRa privés.</p>
+
+  <br>
+  <h3>🧭 En résumé</h3>
+  <p>Ce projet apporte une réponse concrète à un besoin de terrain : collecter des mesures fiables, à distance, sans dépendre d’une infrastructure filaire. C’est une solution simple, mais puissante, née du bricolage intelligent et du pragmatisme d’un automaticien. Elle est prête à être déployée là où les câbles ne vont pas.</p>
+
+  <blockquote>« Plutôt que de tirer 300 mètres de câble, j’ai tiré une idée. Et maintenant, ça capte. »</blockquote>
     <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
 </section>
 
