@@ -86,7 +86,7 @@
 <body>
 
     <header>
-        <h1>Pocket diagnostic automate</h1>
+        <h1>Christophe-CtrlCmd</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -99,32 +99,48 @@
     </header>
 
     <section class="playstore-style">
-    <h2>🧰 Pocket diagnostic automate</h2>
+  <h2>🧰 Pocket Diagnostic Automate</h2>
+  <p><strong>Une station de diagnostic dans la paume de la main. Née du terrain, pensée pour l’efficacité.</strong></p>
+  <p>La Pocket Diagnostic Automate est un outil DIY conçu pour interagir directement avec les automates SMC600. Basée sur un Arduino Nano Every et un écran LCD I2C, elle permet de poser un diagnostic précis, rapide et sans matériel lourd, même au cœur d’un environnement industriel contraint.</p>
 
-    <p>Un outil de poche, discret mais redoutablement efficace. Cette pocket convertit un Arduino Every et un écran LCD en une véritable station de diagnostic portable pour automates SMC600. 
-	Alimentée directement par l’unité centrale, elle utilise une communication en boucle de courant à 19200 bauds. Elle intègre 13 fonctions dédiées principalement au diagnostic et à l’analyse terrain.</p>
+  <br>
+  <h3>🧪 Une réponse à un vrai manque</h3>
+  <p>Les outils constructeur, souvent limités, obsolètes ou introuvables, ne suffisent plus à répondre aux exigences de la maintenance moderne. Cette pocket est née de ce constat. Son format réduit et sa simplicité d’utilisation en font une alliée idéale pour les interventions en conditions réelles, sans PC, sans logiciel externe, sans dépendance.</p>
 
-    <h3>Fonctionnalités :</h3>
-    <ul>
-		<li>Autodiagnostic des bits de défauts automate</li>
-		<li>Teste automatiquement la liaison à l'initialisation</li>
-		<li>Peut enregistrer et écrire les mots de données</li>
-		<li>Diagnostique les cartes 5CLI2</li>
-		<li>Alimentée par l'unité centrale</li>
-    </ul>
+  <br>
+  <h3>⚙️ Ce qu’elle sait faire</h3>
+  <p>Derrière sa simplicité se cache une vraie puissance. L’outil propose treize fonctions, allant de l’autodiagnostic des bits de défauts jusqu’à la lecture des mots mémoire et à la modification d’horodatages. Elle peut lire, tester, écrire et analyser en temps réel, sur tous les racks et pour différents types de cartes (entrées, sorties, coupleurs...)</p>
+  <p>Sa capacité à travailler à 19200 bauds en boucle de courant, avec une latence mesurée à seulement 5 ms, la rend parfaitement compatible avec les installations SMC600 existantes.</p>
 
-    <h3>Captures d’écran :</h3>
-    <div class="screenshots">
-        <img src="images/pocket_diagnostic.jpg" alt="Pocket dans la main">
-        <img src="images/ecran_pocket.jpg" alt="Affichage diagnostic binaire">
-        <img src="images/P600.jpg" alt="Câblage interne pocket">
-    </div>
+  <br>
+  <h3>📐 Design & intégration</h3>
+  <p>Imprimée en 3D dans un boîtier PLA compact, la pocket a été conçue pour durer. Le câblage est propre, sécurisé, et documenté sur demande. Elle s’alimente directement via l’unité centrale de l’automate, sans batterie ni alimentation externe. L’interface utilisateur, réduite à l’essentiel, permet une prise en main quasi instantanée : une navigation par menu, quelques boutons, et le tour est joué.</p>
 
-    <h3>Pourquoi ce projet ?</h3>
-    <p>Conçu pour pallier l'absence d'outils modernes sur des systèmes anciens, ce projet répond à un vrai besoin terrain. 
-Les automates SMC600 sont encore présents dans de nombreuses installations industrielles, mais souvent sans moyen de diagnostic pratique ou portable. 
-Cette pocket permet de réintroduire un contrôle rapide et autonome, le tout dans un format compact et robuste. 
-Pensée pour les techniciens, par un technicien, elle redonne de la visibilité à ces automates oubliés.</p>
+<h3>Images :</h3>
+        <div class="screenshots">
+            <img src="images/Boitier.jpg" alt="Boîtier du projet">
+            <img src="images/P6001.jpg" alt="Écran LCD avec les données">
+            <img src="images/P600.jpg" alt="Câblage Arduino automate">
+
+        </div>
+	
+  <br>
+  <h3>🔧 Mise en œuvre & terrain</h3>
+  <p>Testée et validée en situation réelle, la pocket est aujourd’hui utilisée comme outil d’appoint ou de vérification rapide. Elle n’a pas vocation à remplacer les systèmes avancés… mais force est de constater qu’elle les dépasse souvent en réactivité, en simplicité, et surtout en disponibilité.</p>
+
+  <br>
+  <h3>🛠️ Firmware libre & évolutif</h3>
+  <p>Le programme est écrit en C++ via l’Arduino IDE. Il peut être mis à jour via USB et modifié selon les besoins spécifiques des utilisateurs. Plusieurs évolutions sont déjà en cours de test, notamment pour élargir la compatibilité vers d’autres gammes d’automates ou intégrer une mémoire de logs locale.</p>
+
+  <br>
+  <h3>👥 Pour qui ?</h3>
+  <p>Elle s’adresse aux techniciens de maintenance, automaticiens ou formateurs souhaitant disposer d’un outil fiable, accessible et pédagogique. Aucune connaissance approfondie n’est requise pour l’utiliser. Une notice d’utilisation est disponible sur simple demande.</p>
+
+  <br>
+  <h3>💬 En conclusion</h3>
+  <p>La Pocket Diagnostic Automate est l’illustration d’un savoir-faire pragmatique : identifier un besoin, créer une solution fonctionnelle, la faire évoluer, et surtout la partager. Elle représente un petit outil, avec une grande portée.</p>
+  <blockquote>« Ce genre de projet me rappelle pourquoi j’aime l’automatisme : bricoler utile, comprendre en profondeur, et rendre accessible ce qui ne l’était plus. »</blockquote>
+
 
     <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
 </section>
