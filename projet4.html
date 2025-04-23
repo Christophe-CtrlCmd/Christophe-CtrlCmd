@@ -86,7 +86,7 @@
 <body>
 
     <header>
-        <h1>Pocket de diagnostic communication JBUS</h1>
+        <h1>Christophe-CtrlCmd</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -100,28 +100,45 @@
 
     <section class="playstore-style">
     <h2>📡 Pocket de diagnostic communication JBUS</h2>
+  <p><strong>Un diagnostic instantané dans la paume de la main.</strong></p>
+  <p>Cette pocket est un véritable couteau suisse pour technicien en galère. Conçue pour tester les communications JBUS (compatibles SMC et APRIL 1000), elle valide l’état des cartes via RS232 ou boucle de courant. Résultat ? Un diagnostic fiable, visuel, rapide. Une solution tout-en-un pour ceux qui n’ont pas le temps de douter.</p>
 
-    <p>Un outil de poche conçu pour valider rapidement le bon fonctionnement des cartes de communication JBUS, compatibles SMC ou APRIL 1000. Grâce à cette pocket, finis les doutes sur l'état d'une carte que le cablage soit en RS232 ou boucle de courant : le diagnostic est immédiat, visuel et fiable.</p>
+  <br>
+  <h3>🌱 Genèse du projet</h3>
+  <p>L’idée est née d’une frustration bien connue : impossible de savoir si le problème vient du câblage, de la carte ou de la configuration. Trop souvent, on change une carte au hasard. Et parfois on change trois fois pour rien. En tant qu’automaticien, j’ai vu ce scénario trop souvent se répéter.</p>
+  <p>J’avais déjà développé quelques outils portables, alors j’ai décidé de concevoir une pocket de diagnostic dédiée aux protocoles JBUS. Pas besoin d’ordinateur, pas besoin de réseau. Juste un boîtier compact, un écran et une vraie logique de test. Le tout pensé pour durer et survivre à l’atelier.</p>
 
-    <h3>Fonctionnalités :</h3>
-    <ul>
-        <li>Test des cartes en RS232 ou en boucle de courant</li>
-        <li>Affichage en temps réel des échanges JBUS</li>
-        <li>Simulation du maître en JBUS</li>
-        <li>Détection automatique des erreurs</li>
-    </ul>
+  <br>
+  <h3>⚙️ Fonctionnalités</h3>
 
-    <h3>Captures d’écran :</h3>
-    <div class="screenshots">
-        <img src="images/pocket_jbus1.jpg" alt="Pocket JBUS vue extérieure">
-        <img src="images/pocket_jbus2.jpg" alt="Écran diagnostic en cours">
-        <img src="images/pocket_jbus3.jpg" alt="Connexion RS232 en test">
-        <img src="images/pocket_jbus4.jpg" alt="Module en boucle de courant">
-    </div>
+  <p><strong>🔌 Compatibilité RS232 & boucle de courant</strong><br>
+  La pocket prend en charge les deux types de liaisons les plus courants dans le monde industriel. Plus besoin d’un convertisseur externe ou d’un PC portable fragile sur le terrain. On branche, et ça cause JBUS.</p>
 
-    <h3>Pourquoi ce projet ?</h3>
-    <p>En environnement industriel, la fiabilité d’une communication JBUS est cruciale. Ce projet est né de la nécessité d’un outil simple, transportable et efficace pour valider rapidement l’état des cartes de communication sur le terrain. Avec son look brut et sa logique tout-terrain, cette pocket réduit les temps de diagnostic et limite les erreurs d'interprétation.</p>
+  <p><strong>📺 Affichage en temps réel</strong><br>
+  L’écran intégré affiche les trames échangées, la validité CRC, et l’activité de chaque bit de communication. Tout est lisible, immédiatement, sans interprétation hasardeuse.</p>
 
+  <p><strong>🎮 Simulation du maître JBUS</strong><br>
+  La pocket peut initier des requêtes vers un esclave pour vérifier qu’il répond. Pratique pour tester une carte sans devoir tout rebrancher ou faire tourner un automate.</p>
+
+  <p><strong>⚠️ Détection automatique d’erreurs</strong><br>
+  CRC invalide ? Pas de réponse ? Cadence douteuse ? La pocket détecte les défauts les plus courants et les signale clairement à l’écran. Moins de doutes, plus de décisions.</p>
+
+  <br>
+  <h3>📸 Captures d’écran</h3>
+  <div class="screenshots">
+    <img src="images/pocket_vue_exterieure.jpg" alt="Vue extérieure de la pocket JBUS">
+    <img src="images/ecran_diagnostic.jpg" alt="Écran en cours de diagnostic JBUS">
+    <img src="images/connexion_rs232.jpg" alt="Test d'une liaison RS232">
+    <img src="images/module_boucle_courant.jpg" alt="Test en boucle de courant">
+  </div>
+
+  <br>
+  <h3>🧰 Pourquoi ce projet ?</h3>
+  <p>Dans une usine, le temps c’est plus que de l’argent : c’est souvent la clé pour éviter une production à l’arrêt. Avec cette pocket, j’ai voulu créer un outil simple, fiable, et autonome. Pas besoin de formation, pas besoin de Wi-Fi, juste un bouton ON et une interface claire. Le genre d’outil qu’on sort sans réfléchir, parce qu’on sait qu’il marche.</p>
+
+  <p>Ce projet est né d’un besoin terrain, d’un ras-le-bol des outils trop lourds ou trop spécialisés. Aujourd’hui, il tient dans une poche et il est prêt à valider n’importe quelle carte JBUS en quelques secondes. Un vrai outil de technicien, fait par un technicien.</p>
+
+  <blockquote>« Quand le doute s’installe, cette pocket te dit la vérité. »</blockquote>
     <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
 </section>
 
