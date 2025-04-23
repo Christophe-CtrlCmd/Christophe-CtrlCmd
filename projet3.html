@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APPLICATION CtrlCmd">
-    <title>APPLICATION CtrlCmd - Projet 3</title>
+    <meta name="description" content="LoRaWAN">
+    <title>LoRaWAN - Projet 7</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -86,7 +86,7 @@
 <body>
 
     <header>
-        <h1>Application Android - Aide terrain</h1>
+        <h1>Christophe-CtrlCmd</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -98,32 +98,54 @@
         </nav>
     </header>
 
-  <section class="playstore-style">
-    <h2>📱 Application Android - Aide terrain</h2>
+    <section class="playstore-style">
+     <h2>📡 Voie de mesure reportée par LoRaWAN</h2>
+  <p><strong>Mesurer loin, sans fil, sans compromis.</strong></p>
+  <p>Ce projet transforme un simple duo de cartes Arduino en une solution de transmission de mesures analogiques à longue portée grâce à LoRaWAN. Il a été conçu pour les contextes où la pose de câbles est trop coûteuse ou tout simplement impossible. Facile à intégrer, économe en énergie, robuste dans la durée : un allié de choix pour vos installations IoT industrielles ou environnementales.</p>
 
-    <p>Une appli Android légère mais musclée pour les techniciens terrain. Elle regroupe fiches, calculateurs, rappels JBus et bien plus encore. Disponible en APK brut (pas Play Store).</p>
+  <br>
+  <h3>🌱 Genèse du projet</h3>
+  <p>Tout est parti d’un besoin concret sur le terrain : comment suivre un paramètre (En l'occurrence, un niveau) dans une zone inaccessible, éloignée ou dépourvue d’alimentation réseau ? C’est lors d’une intervention sur la mesure qu’est née l’idée : "Et si on utilisait LoRa pour ça ?". Je connaissais déjà les cartes Arduino et j’avais expérimenté quelques modules de transmission. Il ne manquait plus qu’un défi pratique pour enclencher le projet.</p>
+  <p>J’ai donc conçu ce projet pour qu’il soit adaptable, accessible, et documenté. Et surtout : pour qu’il tienne sur le terrain.</p>
 
-    <h3>Fonctionnalités :</h3>
-    <ul>
-		<li>Outils de conversion dédiés à l’automatisme</li>
-		<li>Modules de calcul adaptés aux mesures industrielles</li>
-		<li>Base documentaire embarquée, accessible hors connexion</li>
-		<li>Fonctionne sur tous les appareils Android 7.0 et supérieurs</li>
-    </ul>
+  <br>
+  <h3>⚙️ Fonctionnalités</h3>
 
-    <h3>Captures d’écran :</h3>
-    <div class="screenshots">
-        <img src="images/DM1.jpg" alt="Menu">
-        <img src="images/DM2.jpg" alt="Convertisseur ASCII/Binaire/Hexa/Gray/Decimale">
-        <img src="images/DM3.jpg" alt="Calculatrice instrumentation">
-    </div>
+  <p><strong>📶 Transmission longue portée via LoRaWAN</strong><br>
+  Le cœur du système repose sur la communication LoRa, permettant de transmettre la mesure sur plusieurs kilomètres, même dans des environnements complexes (bois, zones industrielles, vallées…). Idéal pour surveiller des points isolés.</p>
 
-    <h3>Pourquoi ce projet ?</h3>
-    <p>Entre deux interventions, pas de temps pour chercher sur Google. Cette app est un couteau suisse numérique toujours prêt, même sans réseau. Old school dans l’âme, Android dans la poche.</p>
+  <p><strong>🔌 Compatible Arduino</strong><br>
+  Le montage repose sur des cartes Arduino standards, rendant le projet accessible à tous ceux qui ont déjà manipulé ces microcontrôleurs. Les schémas sont simples, reproductibles, évolutifs.</p>
 
+  <p><strong>🌍 Utilisation IoT industrielle et environnementale</strong><br>
+  Que ce soit pour surveiller un réservoir à distance, collecter des données climatiques dans un champ, ou étendre un réseau de capteurs dans une usine, cette solution offre une base robuste, fiable et flexible.</p>
+
+  <p><strong>🪫 Faible consommation énergétique</strong><br>
+  Pensé pour durer, le système optimise sa consommation en basculant en veille entre les cycles de mesure. Il est compatible avec les batteries rechargeables ou les petites alimentations solaires.</p>
+
+  <p><strong>🛠️ Installation et configuration simplifiées</strong><br>
+  Les modules sont préprogrammés avec une interface minimale. L’utilisateur n’a qu’à brancher les capteurs, choisir son intervalle de mesure, et c’est parti.</p>
+
+  <br>
+  <h3>📸 Captures d’écran</h3>
+  <div class="screenshots">
+    <img src="images/boitier_lora.jpg" alt="Boîtier complet avec modules Arduino">
+    <img src="images/ecran_lcd_donnees.jpg" alt="Écran LCD affichant les données en temps réel">
+    <img src="images/cablage_arduino.jpg" alt="Câblage entre carte Arduino et automate">
+    <img src="images/carte_sd_module.jpg" alt="Carte SD intégrée pour stockage local">
+  </div>
+
+  <br>
+  <h3>📦 Distribution & personnalisation</h3>
+  <p>Les fichiers sources, schémas de câblage et configurations sont disponibles sur demande. Le projet peut être adapté facilement à différents capteurs (analogiques ou numériques), et intégré à des réseaux LoRa privés.</p>
+
+  <br>
+  <h3>🧭 En résumé</h3>
+  <p>Ce projet apporte une réponse concrète à un besoin de terrain : collecter des mesures fiables, à distance, sans dépendre d’une infrastructure filaire. C’est une solution simple, mais puissante, née du bricolage intelligent et du pragmatisme d’un automaticien. Elle est prête à être déployée là où les câbles ne vont pas.</p>
+
+  <blockquote>« Plutôt que de tirer 300 mètres de câble, j’ai tiré une idée. Et maintenant, ça capte. »</blockquote>
     <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
 </section>
-
 
     <footer>
         <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
