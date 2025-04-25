@@ -18,6 +18,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Index - Christophe-CtrlCmd</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+    #terminal {
+      white-space: pre-wrap;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    .logo {
+      font-size: 1rem;
+      margin-top: 30px;
+      text-align: center;
+      white-space: pre;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -39,6 +60,58 @@
       <p>Bienvenue sur mon espace personnel dédié à l'automatisme, au rétro-engineering et aux projets techniques. Ce site a pour but de présenter mes travaux, mon parcours, et quelques surprises...</p>
     </section>
   </main>
+  <div id="terminal"></div>
+<div id="logo" class="logo"></div>
+
+<script>
+  const text = [
+    "BOOTING SYSTEM...\n",
+    "CHECKING MEMORY... OK\n",
+    "LOADING MODULES... OK\n",
+    "STARTING INTERFACE...\n",
+    "WELCOME USER\n"
+  ];
+
+  const asciiLogo = `
+ ██████╗████████╗██████╗ ██╗      ██████╗███╗   ███╗██████╗ 
+██╔════╝╚══██╔══╝██╔══██╗██║     ██╔════╝████╗ ████║██╔══██╗
+██║        ██║   ██████╔╝██║     ██║     ██╔████╔██║██║  ██║
+██║        ██║   ██╔══██╗██║     ██║     ██║╚██╔╝██║██║  ██║
+╚██████╗   ██║   ██║  ██║███████╗╚██████╗██║ ╚═╝ ██║██████╔╝
+ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝     ╚═╝╚═════╝ 
+`;
+
+  const terminal = document.getElementById("terminal");
+  const logo = document.getElementById("logo");
+  let line = 0;
+  let char = 0;
+
+  function typeLine() {
+    if (line < text.length) {
+      if (char < text[line].length) {
+        terminal.textContent += text[line][char++];
+        setTimeout(typeLine, 50);
+      } else {
+        terminal.textContent += '\n';
+        char = 0;
+        line++;
+        setTimeout(typeLine, 300);
+      }
+    } else {
+      terminal.innerHTML += '<span class="cursor">█</span>';
+      setTimeout(() => {
+        terminal.querySelector('.cursor').remove();
+        logo.textContent = asciiLogo;
+      }, 1000);
+    }
+  }
+
+  // Exécution automatique au chargement de la page
+  window.addEventListener('load', () => {
+    typeLine();
+  });
+</script>
+  
   <footer>
     <p>&copy; 2025 Christophe-CtrlCmd</p>
   </footer>
