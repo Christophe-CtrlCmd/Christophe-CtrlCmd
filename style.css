@@ -60,6 +60,44 @@ nav ul li a:hover {
   color: #ff0;
   text-decoration: underline;
 }
+/* == division par 2 pour texte about*/ 
+
+.content-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.content-block .content-image,
+.content-block .content-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.content-block .content-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* optionnel pour un look plus doux */
+}
+
+/* Inversion pour alterner */
+.content-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+  .content-block {
+    flex-direction: column;
+  }
+  .content-block.reverse {
+    flex-direction: column;
+  }
+}
 
 /* === En-tête & pied de page === */
 header,
