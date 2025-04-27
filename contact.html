@@ -1,22 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62WBGRS389"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-62WBGRS389"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-62WBGRS389');
+  </script>
 
-  gtag('config', 'G-62WBGRS389');
-</script>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contactez Christophe-CtrlCmd pour toute demande professionnelle ou pour discuter de projets d'automatisation.">
   <title>Contact - Christophe-CtrlCmd</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Style spécifique pour la page Contact */
+    section {
+      padding: 2rem;
+      max-width: 600px;
+      margin: 50px auto;
+      background-color:  #000;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    button {
+      padding: 12px;
+      background-color: #0ff;
+      color: black;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0ff0ff;
+    }
+    #resultat {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+      transition: opacity 0.5s;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
@@ -33,26 +95,32 @@
       <li><a href="contact.html"><img src="images/Contact.png" alt="Contact" class="menu-icon"> Contact</a></li>
       <li><a href="ressources.html"><img src="images/Ressources.png" alt="Ressources" class="menu-icon"> Ressources</a></li>
       <li><a href="b42.html"><img src="images/B42.png" alt="B42 ??" class="menu-icon"> B42 ??</a></li>
-</ul>
+    </ul>
   </nav>
 </header>
 
 <section>
   <h2>Contactez-moi</h2>
-  <p>Vous avez un projet ou une question ? N'hésitez pas à me contacter pour en discuter !</p>
+  <p style="text-align:center;">Vous avez un projet ou une question ? N'hésitez pas à me contacter !</p>
 
   <form id="contact-form">
-    <label for="name">Votre nom :</label>
-    <input type="text" id="name" name="name" required>
+    <div>
+      <label for="name">Votre nom :</label>
+      <input type="text" id="name" name="name" required>
+    </div>
 
-    <label for="email">Votre email :</label>
-    <input type="email" id="email" name="email" required>
+    <div>
+      <label for="email">Votre email :</label>
+      <input type="email" id="email" name="email" required>
+    </div>
 
-    <label for="message">Votre message :</label>
-    <textarea id="message" name="message" required></textarea>
+    <div>
+      <label for="message">Votre message :</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
 
     <button type="submit">Envoyer</button>
-    <p id="resultat" style="margin-top:10px; color:lime;"></p>
+    <p id="resultat"></p>
   </form>
 </section>
 
@@ -60,11 +128,11 @@
   <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
 </footer>
 
-<!-- 📦 Script EmailJS placé en bas -->
+<!-- Script EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   (function() {
-    emailjs.init("Owi5m0WB-g_JghchS"); // Ton vrai public key
+    emailjs.init("Owi5m0WB-g_JghchS");
   })();
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -73,9 +141,13 @@
 
       emailjs.sendForm('service_l3494c7', 'template_ly8ixrp', this)
         .then(function() {
-          document.getElementById('resultat').textContent = "Message envoyé avec succès !";
+          const result = document.getElementById('resultat');
+          result.style.color = 'green';
+          result.textContent = "✅ Message envoyé avec succès !";
         }, function(error) {
-          document.getElementById('resultat').textContent = "Erreur lors de l'envoi. Réessayez plus tard.";
+          const result = document.getElementById('resultat');
+          result.style.color = 'red';
+          result.textContent = "❌ Erreur lors de l'envoi. Réessayez plus tard.";
           console.error('FAILED...', error);
         });
 
