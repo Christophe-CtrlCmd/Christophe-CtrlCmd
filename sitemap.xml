@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc> https://Christophe-CtrlCmd.github.io/Christophe-CtrlCmd</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Page À propos -->
+  <url>
+    <loc> https://Christophe-CtrlCmd.github.io/Christophe-CtrlCmd/about.html</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Page Projets -->
+  <url>
+    <loc> https://Christophe-CtrlCmd.github.io/Christophe-CtrlCmd/projects.html</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Page Contact -->
+  <url>
+    <loc> https://Christophe-CtrlCmd.github.io/Christophe-CtrlCmd/contact.html</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Page Ressources -->
+  <url>
+    <loc> https://Christophe-CtrlCmd.github.io/Christophe-CtrlCmd/ressources.html</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Page B42 ?? -->
+  <url>
+    <loc> https://Christophe-CtrlCmd.github.io/Christophe-CtrlCmd/b42.html</loc>
+    <lastmod>2025-04-27</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+</urlset>
