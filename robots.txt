@@ -1,0 +1,16 @@
+# Fichier robots.txt pour le site Christophe-CtrlCmd
+
+# Autoriser tous les robots à explorer tout le site
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /junk/
+
+# Autoriser l'accès aux pages importantes (dans le cas où vous voudriez restreindre certains répertoires)
+Allow: /about.html
+Allow: /projects.html
+Allow: /contact.html
+Allow: /ressources.html
+
+# Sitemap pour les moteurs de recherche
+Sitemap:https://Christophe-CtrlCmd.github.io/Christophe-CtrlCmd/sitemap.xml
