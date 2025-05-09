@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-62WBGRS389"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-62WBGRS389');
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez une horloge GPS Arduino ultra précise conçue pour l'industrie : synchronisation satellite, affichage UTC, autonomie totale et mode secouru. Fiabilité et robustesse pour vos systèmes automatisés.">
+    <title>Horloge GPS ARDUINO - Projet 8</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #33ff33;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .playstore-style {
+            background: #222;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: inset 0 0 10px #0f0;
+        }
+
+        .playstore-style h2 {
+            font-size: 2em;
+            border-bottom: 1px solid #33ff33;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        .playstore-style h3 {
+            color: #ff0;
+        }
+
+        .playstore-style ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .playstore-style ul li::before {
+            content: "▣ ";
+            color: #FF00FF;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .screenshots img {
+            border: 2px solid #555;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #0f0;
+            width: 220px;
+            height: auto;
+        }
+
+        button {
+            background-color: #222;
+            color: #33ff33;
+            border: 2px solid #33ff33;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        header nav ul li a {
+            color: #33ff33;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo Christophe-CtrlCmd">
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="images/Acceuil.png" alt="Accueil" class="menu-icon"> Accueil</a></li>
+      <li><a href="about.html"><img src="images/Propos.png" alt="À propos" class="menu-icon"> À propos</a></li>
+      <li><a href="projects.html"><img src="images/Projets.png" alt="Projets" class="menu-icon"> Projets</a></li>
+      <li><a href="contact.html"><img src="images/Contact.png" alt="Contact" class="menu-icon"> Contact</a></li>
+      <li><a href="ressources.html"><img src="images/Ressources.png" alt="Ressources" class="menu-icon"> Ressources</a></li>
+      <li><a href="b42.html"><img src="images/B42.png" alt="B42 ??" class="menu-icon"> B42 ??</a></li>
+</ul>
+  </nav>
+</header>
+
+    <section class="playstore-style">
+     <h2>📡 Horloge GPS de précision</h2>
+  <p><strong>L’heure exacte, où que vous soyez.</strong></p>
+  <p>Compacte, robuste, et pensée pour l’industrie, cette horloge GPS est le compagnon idéal des systèmes automatisés qui ont besoin de parler le même langage temporel. Synchronisation fiable, indépendance totale, précision à la microseconde près. Pas de dérive, pas d’excuse. Juste l’heure, la bonne.</p>
+
+  <br>
+  <h3>🌱 Genèse du projet</h3>
+  <p>Le déclic est venu d’une intervention sur une vieille horloge grande onde. Un matériel fatigué, obsolète, et capricieux. Elle peinait à garder le cap, et il devenait de plus en plus difficile de trouver des pièces ou de garantir sa fiabilité.</p>
+  <p>C’est là qu’un collègue m’a soufflé l’idée : « Pourquoi pas une horloge GPS ? » Plus moderne, plus précise, plus autonome. J’ai creusé, et rapidement, la logique s’est imposée.</p>
+  <p>J’ai donc décidé de concevoir une horloge GPS pensée pour l’industrie : simple, robuste, lisible. Pas un gadget, mais un vrai outil de synchronisation, capable de remplacer ces anciennes horloges sans rien sacrifier à la fiabilité. Une réponse concrète à un besoin terrain, avec les technologies d’aujourd’hui.</p>
+
+  <br>
+  <h3>⚙️ Fonctionnalités</h3>
+
+  <p><strong>🛰️ Synchronisation GPS ultra précise</strong><br>
+  L’horloge capte les signaux satellites pour se caler sur le temps universel. Elle s’ajuste automatiquement, corrige les dérives et vous offre une précision redoutable, sans intervention humaine.</p>
+
+  <p><strong>📟 Affichage instantané</strong><br>
+ Heure UTC, format 24 h, date et nombre de satellites perçus. L’écran affiche les infos essentielles. L’interface minimaliste, pensée pour être lisible même en plein soleil, fait le job sans détour.</p>
+
+  <p><strong>🕹️ Sorties TTL et liaison série</strong><br>
+  Que ce soit pour surveiller un réservoir à distance, collecter des données climatiques dans un champ, ou étendre un réseau de capteurs dans une usine, cette solution offre une base robuste, fiable et flexible.</p>
+
+  <p><strong>💾 Autonomie totale</strong><br>
+  Alimentée en 5V ou 12V, sans réseau, sans Wi-Fi, sans PC. C’est un bloc qui tourne seul. Un bloc fiable. Une boussole temporelle que rien n’arrête.</p>
+
+  <p><strong>🛠️ Mode secouru intégré</strong><br>
+  En cas de perte du signal GPS, l’horloge ne se démonte pas. Une horloge interne prend le relais et assure la continuité de l’horodatage jusqu’à la récupération du signal. Moins de coupures, plus de confiance.</p>
+
+  <br>
+  <h3>📸 Captures d’écran</h3>
+  <div class="screenshots">
+    <img src="images/GPS.jpg" alt="Données horloge GPS">
+    <img src="images/GPSext.jpg" alt="Écran en exterieur affichage UTC">
+    <img src="images/GPSint.jpg" alt="Écran en interier affichage UTC secours">
+  </div>
+
+  <br>
+  <h3>🧰 Pourquoi ce projet ?</h3>
+  <p>Dans l’industrie, le temps c’est plus qu’un chiffre : c’est un repère. Sans synchronisation fiable, c’est tout un système qui peut tomber dans le flou. Avec cette horloge, j’ai voulu créer un outil simple, stable, et sans dépendance.</p>
+  
+  <p>Pas besoin d’un serveur temps, pas besoin d’un PC. Cette horloge dit l’heure, elle dit toujours la même chose, et elle le dit avec la précision d’un satellite. C’est un outil de confiance. Un point fixe dans la jungle des diagnostics incertains.</p>
+
+  <blockquote>« Quand chaque seconde compte, cette horloge te les rend exactes. »</blockquote>
+    <button onclick="window.location.href='projects.html'">◀ RETOUR AUX PROJETS</button>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Christophe-CtrlCmd. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
